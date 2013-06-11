@@ -59,7 +59,10 @@ function doGetUserMedia() {
 }
 
 function createPeerConnection() {
-  var pc_config = {"iceServers":[{"url":"stun:23.21.150.121"}]};
+  var pc_config = {"iceServers":[
+      {"url":"stun:23.21.150.121"},
+      {"url":"turn:1370991380@54.244.14.244:443","credential":"LzipPd3bhpGqj09BaoKNDAPmpuM="}
+    ]};
   var pc_constraints = { "optional":[{"DtlsSrtpKeyAgreement":true}] };
   // Force the use of a number IP STUN server for Firefox.
   if (webrtcDetectedBrowser == "firefox") {
